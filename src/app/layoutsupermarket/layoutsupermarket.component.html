@@ -1,0 +1,51 @@
+<mat-sidenav-container fullscreen>
+    <!-- <app-sidebar></app-sidebar> -->
+    <mat-sidenav mode="side" #sidenav opened position="start">        
+            <button mat-button class="menu-button">
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+            </button>
+
+            <mat-divider></mat-divider>
+            
+            <button mat-button class="menu-button" routerLink="/products">
+                <!-- <mat-icon>apple</mat-icon> -->
+                <span>Product</span>
+            </button>
+            
+            <mat-divider></mat-divider>
+            
+            <button mat-button class="menu-button" routerLink="/category">
+                <span>Category</span>
+            </button>
+    
+            <mat-divider></mat-divider>
+
+            <button mat-button class="menu-button">
+                <span>Role</span>
+            </button>
+    
+            <mat-divider></mat-divider>
+    
+            <button mat-button class="menu-button">
+                <mat-icon>help</mat-icon>
+                <span>Help</span>
+            </button>    
+      </mat-sidenav>
+      
+    <mat-sidenav-content>
+      
+        <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        {{title}}
+        <span class="toolbar-spacer"></span>
+        My Account
+      </mat-toolbar>
+      <div class="main-content">
+        <p>Lorem Ipsum.</p>
+      </div>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
